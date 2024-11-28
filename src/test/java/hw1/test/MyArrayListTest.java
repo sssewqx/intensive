@@ -117,4 +117,12 @@ public class MyArrayListTest {
 
         assertEquals(2, list.get(0));
     }
+
+    @Test
+    void testAddManyElements() {
+        for (int i = 0; i < 1000; i++) {
+            list.add(i);
+        }
+        assertEquals(1000, list.size());
+    }
 }

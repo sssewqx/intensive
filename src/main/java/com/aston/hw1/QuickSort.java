@@ -22,7 +22,6 @@ public class QuickSort {
             sort(elements, pivotIndex + 1, high, comparator);
         }
     }
-
     /**
      * Разделяет массив на две части для быстрой сортировки.
      *
@@ -55,10 +54,10 @@ public class QuickSort {
      * @return Результат сравнения: отрицательное значение если a < b,
      *         ноль если a == b и положительное значение если a > b.
      */
-    private static <T> int compare(T a, T b, Comparator<? super T> comparator) {
+    public static <T> int compare(T a, T b, Comparator<? super T> comparator) {
         if (comparator != null) {
             return comparator.compare(a, b);
-        } else if (a instanceof Comparable) {
+        } else if (a instanceof Comparable && b instanceof Comparable) {
             return ((Comparable<T>) a).compareTo(b);
         } else {
             throw new ClassCastException("Элементы не могут быть сравнены.");
